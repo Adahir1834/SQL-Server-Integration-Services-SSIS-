@@ -1,0 +1,1120 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/3/2023 3:16:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-O5GG7AC"
+  DTS:CreatorName="DESKTOP-O5GG7AC\USER"
+  DTS:DTSID="{D2977E01-C7B0-46A9-AF65-5EB6F368CDE0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5228.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="10  Ordenacion"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{E31A56C3-8687-4E93-A7BA-1247C26D4EA9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Archivos Ordenados 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{03D86105-014F-4E1F-A941-50A82DEF2D31}"
+      DTS:ObjectName="Archivos Ordenados 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\PID\10. Ordenamiento\Ordenamiento2.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Producto"
+              DTS:DTSID="{423E8417-69FC-4274-B7E4-B0362FB960ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SubCategoria"
+              DTS:DTSID="{F7251B53-0381-49C2-BB51-932A4FFA5511}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Categoria"
+              DTS:DTSID="{A3399633-C8CC-4D46-A2D4-5C59A742897F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Precio_Unitario"
+              DTS:DTSID="{D390C3ED-C6A7-4FE7-BFF6-95A6DB898652}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Venta"
+              DTS:DTSID="{F9316DEE-3D56-4CB2-8166-C267F33674C6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-O5GG7AC.AdventureWorksDW2022]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0AAA736A-9AC5-4461-A5C4-5E6FB3D2CE1F}"
+      DTS:ObjectName="DESKTOP-O5GG7AC.AdventureWorksDW2022">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-O5GG7AC;Initial Catalog=AdventureWorksDW2022;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-10  Ordenacion-{0AAA736A-9AC5-4461-A5C4-5E6FB3D2CE1F}DESKTOP-O5GG7AC.AdventureWorksDW2022;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Productos Ordenados]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4B2B5A61-8BDE-47E5-822B-43B1DA9CD297}"
+      DTS:ObjectName="Productos Ordenados">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\PID\10. Ordenamiento\Ordenamiento.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductoOk"
+              DTS:DTSID="{5C4942EA-F425-4704-B0C7-9EBFEBD79084}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SubCategoria"
+              DTS:DTSID="{1E8BA04D-F7D6-4774-B03B-3F95FA59D6FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CategoriaOk"
+              DTS:DTSID="{D9FCD904-EB39-4769-90CC-3320382577E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Precio_Unitario"
+              DTS:DTSID="{D2EFFF46-22DE-4711-8D3A-76CE46864291}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total_Venta"
+              DTS:DTSID="{8420F311-7765-4A6C-A174-D49171463D9A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Ordenamiento de Datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BD4DCCBB-F450-4B4A-8BB2-5F139500F6C4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ordenamiento de Datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Ordenamiento de Datos\Extraer Datos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extraer Datos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT P.SpanishProductName AS Producto,
+SC.SpanishProductSubcategoryName AS SubCategoria,
+C.SpanishProductCategoryName AS Categoria,
+FS.UnitPrice AS Precio_Unitario,
+FS.SalesAmount AS Total_Venta
+FROM DimProduct AS P
+INNER JOIN DimProductSubcategory AS SC
+ON P.ProductSubcategoryKey = SC.ProductSubcategoryKey
+INNER JOIN DimProductCategory AS C
+ON SC.ProductCategoryKey = C.ProductCategoryKey
+INNER JOIN FactResellerSales AS FS
+ON FS.ProductKey = P.ProductKey;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ordenamiento de Datos\Extraer Datos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-O5GG7AC.AdventureWorksDW2022]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-O5GG7AC.AdventureWorksDW2022]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Producto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[Producto]"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Producto]"
+                      name="Producto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[SubCategoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[SubCategoria]"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[SubCategoria]"
+                      name="SubCategoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Categoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[Categoria]"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Categoria]"
+                      name="Categoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Precio_Unitario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[Precio_Unitario]"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Precio_Unitario]"
+                      name="Precio_Unitario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Total_Venta]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[Total_Venta]"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Total_Venta]"
+                      name="Total_Venta"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[Producto]"
+                      dataType="wstr"
+                      length="50"
+                      name="Producto" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[SubCategoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="SubCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[Categoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[Precio_Unitario]"
+                      dataType="cy"
+                      name="Precio_Unitario" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].ExternalColumns[Total_Venta]"
+                      dataType="cy"
+                      name="Total_Venta" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[Producto]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[Producto]"
+                      name="Producto" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[SubCategoria]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[SubCategoria]"
+                      name="SubCategoria" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[Categoria]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[Categoria]"
+                      name="Categoria" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[Precio_Unitario]"
+                      dataType="cy"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[Precio_Unitario]"
+                      name="Precio_Unitario" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[Total_Venta]"
+                      dataType="cy"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[Total_Venta]"
+                      name="Total_Venta" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ordenamiento de Datos\Extraer Datos 2"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extraer Datos 2"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT P.EnglishProductName AS Producto,
+SC.SpanishProductSubcategoryName AS SubCategoria,
+C.SpanishProductCategoryName AS Categoria,
+FS.UnitPrice AS Precio_Unitario,
+FS.SalesAmount AS Total_Venta
+FROM DimProduct AS P
+INNER JOIN DimProductSubcategory AS SC
+ON P.ProductSubcategoryKey = SC.ProductSubcategoryKey
+INNER JOIN DimProductCategory AS C
+ON SC.ProductCategoryKey = C.ProductCategoryKey
+INNER JOIN FactResellerSales AS FS
+ON FS.ProductKey = P.ProductKey
+ORDER BY P.SpanishProductName ASC,
+         C.SpanishProductCategoryName ASC;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ordenamiento de Datos\Extraer Datos 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-O5GG7AC.AdventureWorksDW2022]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-O5GG7AC.AdventureWorksDW2022]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Producto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[Producto]"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Producto]"
+                      name="Producto"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[SubCategoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[SubCategoria]"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[SubCategoria]"
+                      name="SubCategoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Categoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[Categoria]"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Categoria]"
+                      name="Categoria"
+                      sortKeyPosition="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Precio_Unitario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[Precio_Unitario]"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Precio_Unitario]"
+                      name="Precio_Unitario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Total_Venta]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[Total_Venta]"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Total_Venta]"
+                      name="Total_Venta"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[Producto]"
+                      dataType="wstr"
+                      length="50"
+                      name="Producto" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[SubCategoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="SubCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[Categoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[Precio_Unitario]"
+                      dataType="cy"
+                      name="Precio_Unitario" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].ExternalColumns[Total_Venta]"
+                      dataType="cy"
+                      name="Total_Venta" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[Producto]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[Producto]"
+                      name="Producto" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[SubCategoria]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[SubCategoria]"
+                      name="SubCategoria" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[Categoria]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[Categoria]"
+                      name="Categoria" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[Precio_Unitario]"
+                      dataType="cy"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[Precio_Unitario]"
+                      name="Precio_Unitario" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[Total_Venta]"
+                      dataType="cy"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[Total_Venta]"
+                      name="Total_Venta" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ordenamiento de Datos\Ordenar"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Ordenar"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Ordenamiento de Datos\Ordenar.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Inputs[Sort Input].Columns[Producto]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Producto"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Producto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">-1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Inputs[Sort Input].Columns[SubCategoria]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SubCategoria"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[SubCategoria]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Inputs[Sort Input].Columns[Categoria]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Categoria"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Categoria]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">-2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Inputs[Sort Input].Columns[Precio_Unitario]"
+                      cachedDataType="cy"
+                      cachedName="Precio_Unitario"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Precio_Unitario]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Inputs[Sort Input].Columns[Total_Venta]"
+                      cachedDataType="cy"
+                      cachedName="Total_Venta"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Total_Venta]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[ProductoOk]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[ProductoOk]"
+                      name="ProductoOk"
+                      sortKeyPosition="-1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Producto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[SubCategoria]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[SubCategoria]"
+                      name="SubCategoria">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[SubCategoria]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[CategoriaOk]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[CategoriaOk]"
+                      name="CategoriaOk"
+                      sortKeyPosition="-2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Categoria]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[Precio_Unitario]"
+                      dataType="cy"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[Precio_Unitario]"
+                      name="Precio_Unitario">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Precio_Unitario]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[Total_Venta]"
+                      dataType="cy"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[Total_Venta]"
+                      name="Total_Venta">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output].Columns[Total_Venta]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ordenamiento de Datos\Productos Orenados 2"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2058"
+              name="Productos Orenados 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ordenamiento de Datos\Productos Orenados 2.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Archivos Ordenados 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Archivos Ordenados 2]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].Columns[Producto]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Producto"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[Producto]"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Producto]" />
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].Columns[SubCategoria]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SubCategoria"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[SubCategoria]"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[SubCategoria]" />
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].Columns[Categoria]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Categoria"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[Categoria]"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Categoria]" />
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].Columns[Precio_Unitario]"
+                      cachedDataType="cy"
+                      cachedName="Precio_Unitario"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[Precio_Unitario]"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Precio_Unitario]" />
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].Columns[Total_Venta]"
+                      cachedDataType="cy"
+                      cachedName="Total_Venta"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[Total_Venta]"
+                      lineageId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output].Columns[Total_Venta]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[Producto]"
+                      dataType="wstr"
+                      length="50"
+                      name="Producto" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[SubCategoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="SubCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[Categoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[Precio_Unitario]"
+                      dataType="cy"
+                      name="Precio_Unitario" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input].ExternalColumns[Total_Venta]"
+                      dataType="cy"
+                      name="Total_Venta" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Ordenamiento de Datos\Produtos Ordenados"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2058"
+              name="Produtos Ordenados"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ordenamiento de Datos\Produtos Ordenados.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Productos Ordenados]"
+                  connectionManagerRefId="Package.ConnectionManagers[Productos Ordenados]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].Columns[ProductoOk]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ProductoOk"
+                      cachedSortKeyPosition="-1"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[ProductoOk]"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[ProductoOk]" />
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].Columns[SubCategoria]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SubCategoria"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[SubCategoria]"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[SubCategoria]" />
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].Columns[CategoriaOk]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CategoriaOk"
+                      cachedSortKeyPosition="-2"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[CategoriaOk]"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[CategoriaOk]" />
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].Columns[Precio_Unitario]"
+                      cachedDataType="cy"
+                      cachedName="Precio_Unitario"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[Precio_Unitario]"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[Precio_Unitario]" />
+                    <inputColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].Columns[Total_Venta]"
+                      cachedDataType="cy"
+                      cachedName="Total_Venta"
+                      externalMetadataColumnId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[Total_Venta]"
+                      lineageId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output].Columns[Total_Venta]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[ProductoOk]"
+                      dataType="wstr"
+                      length="50"
+                      name="ProductoOk" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[SubCategoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="SubCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[CategoriaOk]"
+                      dataType="wstr"
+                      length="50"
+                      name="CategoriaOk" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[Precio_Unitario]"
+                      dataType="cy"
+                      name="Precio_Unitario" />
+                    <externalMetadataColumn
+                      refId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input].ExternalColumns[Total_Venta]"
+                      dataType="cy"
+                      name="Total_Venta" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Ordenamiento de Datos.Paths[OLE DB Source Output]"
+              endId="Package\Ordenamiento de Datos\Ordenar.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Ordenamiento de Datos\Extraer Datos.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Ordenamiento de Datos.Paths[OLE DB Source Output1]"
+              endId="Package\Ordenamiento de Datos\Productos Orenados 2.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Ordenamiento de Datos\Extraer Datos 2.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Ordenamiento de Datos.Paths[Sort Output]"
+              endId="Package\Ordenamiento de Datos\Produtos Ordenados.Inputs[Flat File Destination Input]"
+              name="Sort Output"
+              startId="Package\Ordenamiento de Datos\Ordenar.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Ordenamiento de Datos"
+          TopLeft="156.051948051948,131.506493506494" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Ordenamiento de Datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Ordenamiento de Datos\Extraer Datos"
+          TopLeft="97,74" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\Ordenamiento de Datos\Ordenar"
+          TopLeft="113,173" />
+        <EdgeLayout
+          Id="Package\Ordenamiento de Datos.Paths[OLE DB Source Output]"
+          TopLeft="170,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Ordenamiento de Datos\Produtos Ordenados"
+          TopLeft="86,280" />
+        <EdgeLayout
+          Id="Package\Ordenamiento de Datos.Paths[Sort Output]"
+          TopLeft="172.5,215">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Ordenamiento de Datos\Extraer Datos 2"
+          TopLeft="308,71" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Ordenamiento de Datos\Productos Orenados 2"
+          TopLeft="290,183" />
+        <EdgeLayout
+          Id="Package\Ordenamiento de Datos.Paths[OLE DB Source Output1]"
+          TopLeft="382.75,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ordenamiento de Datos\Extraer Datos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ordenamiento de Datos\Extraer Datos 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

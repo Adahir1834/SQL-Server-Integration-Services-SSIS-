@@ -1,0 +1,734 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/22/2023 3:15:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-O5GG7AC"
+  DTS:CreatorName="DESKTOP-O5GG7AC\USER"
+  DTS:DTSID="{E03BBE8F-033C-4718-8677-8567B664AAEB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5228.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="7  For each Container"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{311ACDEF-9420-4FAE-8FD6-FD2B6B8EA5B4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Coneccion Archivo Videojuego]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F7864B18-5E86-417E-886B-18884DE1D044}"
+      DTS:ObjectName="Coneccion Archivo Videojuego">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CNDinamica]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cod_Archivo"
+              DTS:DTSID="{DDDEF89B-1E26-435E-AE54-72B7931428B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Autor"
+              DTS:DTSID="{A0DBA532-896E-4673-AD06-8F796ECEC5AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Anio"
+              DTS:DTSID="{ACFDD26E-595E-4791-9510-E789F665390E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Edad"
+              DTS:DTSID="{D0719D09-E18C-464F-BE56-9E43A2C64FE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Plataforma"
+              DTS:DTSID="{D187C5DB-E239-4361-95DB-AF5E35F3FE45}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Juego"
+              DTS:DTSID="{CEEAD13C-D23F-44D6-ACA9-8B4D19E2A291}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-O5GG7AC.STREAMING]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{35D0514A-0983-479C-A289-3A4CB3F6FD42}"
+      DTS:ObjectName="DESKTOP-O5GG7AC.STREAMING">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-O5GG7AC;Initial Catalog=STREAMING;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-7  For each Container-{35D0514A-0983-479C-A289-3A4CB3F6FD42}DESKTOP-O5GG7AC.STREAMING;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{22AB636F-F1FF-4C2D-895E-AE22A91DFF41}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CNDinamica">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga Archivos De Videojuegos"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Contenedor de bucles Foreach"
+      DTS:DTSID="{FB229AA1-5059-495E-B2CA-B697D3BE745A}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Archivos De Videojuegos">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{03C91944-DA9C-469E-B68B-F9580D8996F6}"
+        DTS:ObjectName="{03C91944-DA9C-469E-B68B-F9580D8996F6}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\PID\7.ForeachContainer" />
+            <FEFEProperty
+              FileSpec="VideoJuegos*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carga Archivos De Videojuegos\Recupera Archivos"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{BB92EBAA-9605-4CB6-9F38-E2A7CAE0D078}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Recupera Archivos"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="2058"
+                  name="Archivo Videojuego"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Coneccion Archivo Videojuego]"
+                      connectionManagerRefId="Package.ConnectionManagers[Coneccion Archivo Videojuego]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Cod_Archivo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Cod_Archivo]"
+                          length="20"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Cod_Archivo]"
+                          name="Cod_Archivo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Autor]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Autor]"
+                          length="100"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Autor]"
+                          name="Autor"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Anio]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Anio]"
+                          length="4"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Anio]"
+                          name="Anio"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Edad]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Edad]"
+                          length="2"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Edad]"
+                          name="Edad"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Plataforma]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Plataforma]"
+                          length="50"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Plataforma]"
+                          name="Plataforma"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Juego]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Juego]"
+                          length="500"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Juego]"
+                          name="Juego"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Cod_Archivo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Cod_Archivo" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Autor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Autor" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Anio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="Anio" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Edad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="Edad" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Plataforma]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Plataforma" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].ExternalColumns[Juego]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="Juego" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Carga Datos a tabla Videojuegos"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[VideoJuegos]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-O5GG7AC.STREAMING]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-O5GG7AC.STREAMING]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].Columns[Cod_Archivo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Cod_Archivo"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Cod_Archivo]"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Cod_Archivo]" />
+                        <inputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].Columns[Autor]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Autor"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Autor]"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Autor]" />
+                        <inputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].Columns[Edad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="Edad"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Edad]"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Edad]" />
+                        <inputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].Columns[Plataforma]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Plataforma"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Plataforma]"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Plataforma]" />
+                        <inputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].Columns[Juego]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Juego"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Juego]"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Juego]" />
+                        <inputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].Columns[Anio]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="Anio"
+                          externalMetadataColumnId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Año]"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output].Columns[Anio]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Cod_Archivo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Cod_Archivo" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Autor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Autor" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Año]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="Año" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Edad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="Edad" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Plataforma]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Plataforma" />
+                        <externalMetadataColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input].ExternalColumns[Juego]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="Juego" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Carga Archivos De Videojuegos\Recupera Archivos.Paths[Flat File Source Output]"
+                  endId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{F74C2572-A0BD-4FD9-B630-847766B2B3BF}"
+          DTS:ObjectName="{F74C2572-A0BD-4FD9-B630-847766B2B3BF}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::CNDinamica" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar Tabla Videojuegos"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{A403A86C-77C3-4D72-B60E-192D64282800}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar Tabla Videojuegos"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{35D0514A-0983-479C-A289-3A4CB3F6FD42}"
+          SQLTask:SqlStatementSource="Truncate Table VideoJuegos;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{0684169D-2205-4A8C-9476-428A6FE27A40}"
+      DTS:From="Package\Limpiar Tabla Videojuegos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Carga Archivos De Videojuegos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Carga Archivos De Videojuegos\Recupera Archivos"
+          TopLeft="64.4285714285714,28.4285714285714" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="306,137"
+          Size="306,180"
+          Id="Package\Carga Archivos De Videojuegos"
+          TopLeft="91.1746031746032,163.492063492063" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Limpiar Tabla Videojuegos"
+          TopLeft="160,70" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="244.587301587302,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.4920634920635"
+              Start="0,0"
+              End="0,43.9920634920635">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.9920634920635" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga Archivos De Videojuegos\Recupera Archivos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Carga Archivos De Videojuegos\Recupera Archivos\Archivo Videojuego"
+          TopLeft="195,76" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos"
+          TopLeft="166,171" />
+        <EdgeLayout
+          Id="Package\Carga Archivos De Videojuegos\Recupera Archivos.Paths[Flat File Source Output]"
+          TopLeft="280.75,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Archivos De Videojuegos\Recupera Archivos\Carga Datos a tabla Videojuegos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
